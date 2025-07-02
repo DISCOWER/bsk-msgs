@@ -1,0 +1,12 @@
+int32 failed_valid_lambert
+int32 failed_num_iterations_lambert
+int32 failed_x_tolerance_lambert
+int32 failed_x_solution_convergence
+int32 failed_dv_solution_convergence
+int32 failed_distance_target_constraint
+int32 failed_orbit_radius_constraint
+float64 x_solution_difference
+float64 dv_solution_difference
+int32 violations_distance_target
+int32 violations_orbit_radius
+float64[3] dv_n

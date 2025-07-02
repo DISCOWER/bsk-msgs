@@ -1,0 +1,9 @@
+float64 a
+float64 e
+float64 i
+float64 omega
+float64 f
+float64 rmag
+float64 alpha
+float64 r_periap
+float64 r_apoap

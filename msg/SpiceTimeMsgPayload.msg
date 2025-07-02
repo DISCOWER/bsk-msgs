@@ -1,0 +1,4 @@
+float64 j2000_current
+float64 julian_date_current
+float64 gps_seconds
+uint64 gps_rollovers

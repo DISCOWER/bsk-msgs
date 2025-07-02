@@ -1,0 +1,1 @@
+float64 fault_capacity_ratio

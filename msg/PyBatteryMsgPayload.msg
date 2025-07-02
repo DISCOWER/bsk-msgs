@@ -1,0 +1,9 @@
+float64 state_of_charge
+float64 state_of_charge_ah
+float64 solar_array_temperature
+float64 bus_voltage
+float64 battery_current
+float64 solar_array_current
+float64 battery_emf
+float64 battery_esr
+float64 battery_voltage

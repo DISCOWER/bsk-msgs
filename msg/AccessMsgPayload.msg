@@ -1,0 +1,9 @@
+uint64 has_access
+float64 slant_range
+float64 elevation
+float64 azimuth
+float64 range_dot
+float64 el_dot
+float64 az_dot
+float64[3] r_bl_l
+float64[3] v_bl_l

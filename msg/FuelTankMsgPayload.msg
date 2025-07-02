@@ -1,0 +1,3 @@
+float64 fuel_mass
+float64 fuel_mass_dot
+float64 max_fuel_mass

@@ -1,0 +1,4 @@
+float64 albedo_at_instrument_max
+float64 aflux_at_instrument_max
+float64 albedo_at_instrument
+float64 aflux_at_instrument

@@ -1,0 +1,21 @@
+uint8 TYPES_TEST_ARRAY_SIZE = 3
+int8 i8_test
+uint8 ui8_test
+int32 i32_test
+uint32 ui32_test
+int64 i64_test
+uint64 ui64_test
+float32 f32_test
+float64 f64_test
+uint8 uint8_test
+int8 int8_test
+bool bool_test
+int32[3] i32_test_array
+uint32[3] ui32_test_array
+int64[3] i64_test_array
+uint64[3] ui64_test_array
+uint8[3] uint8_test_array
+int8[3] int8_test_array
+bool[3] bool_test_array
+float32[3] f32_test_array
+float64[3] f64_test_array

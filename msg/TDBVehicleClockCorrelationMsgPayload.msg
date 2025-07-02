@@ -1,0 +1,2 @@
+float64 ephemeris_time
+float64 vehicle_clock_time

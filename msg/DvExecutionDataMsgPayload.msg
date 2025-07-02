@@ -1,0 +1,2 @@
+uint32 burn_executing
+uint32 burn_complete

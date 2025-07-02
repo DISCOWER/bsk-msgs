@@ -1,0 +1,2 @@
+float64 neutral_density
+float64 local_temp

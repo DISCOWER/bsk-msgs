@@ -1,0 +1,4 @@
+float64 spacecraft_orb_energy
+float64 spacecraft_rot_energy
+float64[3] spacecraft_orb_ang_mom_pnt_n_n
+float64[3] spacecraft_rot_ang_mom_pnt_c_n
