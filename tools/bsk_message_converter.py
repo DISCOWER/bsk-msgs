@@ -1,13 +1,6 @@
 def camel_to_snake(name):
-    # Convert CamelCase or camelCase to snake_case
-    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
-    s2 = re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1)
-    s3 = s2.lower()
-    # Replace multiple underscores with a single underscore
-    s3 = re.sub(r'_+', '_', s3)
-    # Remove leading/trailing underscores
-    s3 = s3.strip('_')
-    return s3
+    # Convert to lowercase only, not snake_case
+    return name.lower()
 
 
 import os
@@ -105,6 +98,13 @@ def convert_header_to_msg(header_path, out_dir, global_macros):
             macro_lines.append(f"{macro_type} {macro} = {val}")
     field_lines = []
     used_names = set()
+    # Add timestamp as the first field
+    timestamp_field = "builtin_interfaces/Time stamp"
+    if any(camel_to_snake(name) == "stamp" for _, name, _ in fields):
+        print(f"WARNING: Field 'stamp' already exists in {struct_name}, skipping addition of timestamp field.")
+    else:
+        field_lines.append(timestamp_field)
+        used_names.add("stamp")
     for ros_type, name, arrlen in fields:
         name_snake = camel_to_snake(name)
         if name_snake in used_names:

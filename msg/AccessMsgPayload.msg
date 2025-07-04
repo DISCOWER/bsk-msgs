@@ -1,5 +1,6 @@
-uint64 has_access
-float64 slant_range
+builtin_interfaces/Time stamp
+uint64 hasaccess
+float64 slantrange
 float64 elevation
 float64 azimuth
 float64 range_dot

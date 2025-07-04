@@ -1,2 +1,3 @@
+builtin_interfaces/Time stamp
 float64 azimuth
-float64 miss_angle
+float64 missangle

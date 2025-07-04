@@ -1,2 +1,3 @@
-float64 ephemeris_time
-float64 vehicle_clock_time
+builtin_interfaces/Time stamp
+float64 ephemeristime
+float64 vehicleclocktime

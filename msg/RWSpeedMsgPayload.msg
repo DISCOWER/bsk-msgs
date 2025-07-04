@@ -1,3 +1,4 @@
 uint8 MAX_EFF_CNT = 36
-float64[36] wheel_speeds
-float64[36] wheel_thetas
+builtin_interfaces/Time stamp
+float64[36] wheelspeeds
+float64[36] wheelthetas

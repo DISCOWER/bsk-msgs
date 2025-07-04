@@ -1,2 +1,3 @@
 uint8 MAX_EFF_CNT = 36
-int32[36] effector_lock_flag
+builtin_interfaces/Time stamp
+int32[36] effectorlockflag

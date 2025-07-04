@@ -1,4 +1,5 @@
-float64 albedo_at_instrument_max
-float64 aflux_at_instrument_max
-float64 albedo_at_instrument
-float64 aflux_at_instrument
+builtin_interfaces/Time stamp
+float64 albedoatinstrumentmax
+float64 afluxatinstrumentmax
+float64 albedoatinstrument
+float64 afluxatinstrument

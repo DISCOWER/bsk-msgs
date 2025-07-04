@@ -1,1 +1,2 @@
-float64[3] mag_field_n
+builtin_interfaces/Time stamp
+float64[3] magfield_n

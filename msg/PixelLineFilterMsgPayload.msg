@@ -1,7 +1,8 @@
 uint8 PIXLINE_N_MEAS = 6
 uint8 PIXLINE_N_STATES = 9
-float64 time_tag
+builtin_interfaces/Time stamp
+float64 timetag
 float64[9] state
-float64[9] state_error
-float64[6] post_fit_res
-int32 num_obs
+float64[9] stateerror
+float64[6] postfitres
+int32 numobs

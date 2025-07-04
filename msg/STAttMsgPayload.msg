@@ -1,2 +1,3 @@
-uint64 time_tag
-float64[3] mrp_bdy_inrtl
+builtin_interfaces/Time stamp
+uint64 timetag
+float64[3] mrp_bdyinrtl

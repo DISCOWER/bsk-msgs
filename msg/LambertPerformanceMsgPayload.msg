@@ -1,6 +1,7 @@
+builtin_interfaces/Time stamp
 float64 x
-int32 num_iter
-float64 err_x
-float64 x_sol2
-int32 num_iter_sol2
-float64 err_x_sol2
+int32 numiter
+float64 errx
+float64 xsol2
+int32 numitersol2
+float64 errxsol2

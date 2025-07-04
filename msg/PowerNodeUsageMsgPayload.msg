@@ -1,1 +1,2 @@
-float64 net_power
+builtin_interfaces/Time stamp
+float64 netpower

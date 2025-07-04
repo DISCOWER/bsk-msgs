@@ -1,1 +1,2 @@
-uint64 power_status
+builtin_interfaces/Time stamp
+uint64 powerstatus

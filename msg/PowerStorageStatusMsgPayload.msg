@@ -1,3 +1,4 @@
-float64 storage_level
-float64 storage_capacity
-float64 current_net_power
+builtin_interfaces/Time stamp
+float64 storagelevel
+float64 storagecapacity
+float64 currentnetpower

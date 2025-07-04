@@ -1,2 +1,3 @@
+builtin_interfaces/Time stamp
 float64 rho
-float64 rho_dot
+float64 rhodot

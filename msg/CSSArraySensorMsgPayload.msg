@@ -1,3 +1,4 @@
 uint8 MAX_NUM_CSS_SENSORS = 32
-float64 time_tag
-float64[32] cos_value
+builtin_interfaces/Time stamp
+float64 timetag
+float64[32] cosvalue

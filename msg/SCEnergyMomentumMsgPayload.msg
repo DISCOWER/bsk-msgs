@@ -1,4 +1,5 @@
-float64 spacecraft_orb_energy
-float64 spacecraft_rot_energy
-float64[3] spacecraft_orb_ang_mom_pnt_n_n
-float64[3] spacecraft_rot_ang_mom_pnt_c_n
+builtin_interfaces/Time stamp
+float64 spacecraftorbenergy
+float64 spacecraftrotenergy
+float64[3] spacecraftorbangmompntn_n
+float64[3] spacecraftrotangmompntc_n

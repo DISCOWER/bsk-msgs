@@ -1,2 +1,3 @@
-float64[3] n_hat_b
-float64 c_bias
+builtin_interfaces/Time stamp
+float64[3] nhat_b
+float64 cbias

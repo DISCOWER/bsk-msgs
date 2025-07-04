@@ -1,3 +1,4 @@
-float64[3] gs_hat_b
+builtin_interfaces/Time stamp
+float64[3] gshat_b
 float64 js
-float64 u_max
+float64 umax

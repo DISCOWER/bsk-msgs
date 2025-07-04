@@ -1,2 +1,3 @@
-float64[3] v_desired_n
-float64 maneuver_time
+builtin_interfaces/Time stamp
+float64[3] vdesired_n
+float64 maneuvertime

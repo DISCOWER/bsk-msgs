@@ -1,2 +1,3 @@
-uint32 burn_executing
-uint32 burn_complete
+builtin_interfaces/Time stamp
+uint32 burnexecuting
+uint32 burncomplete

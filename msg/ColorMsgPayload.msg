@@ -1,1 +1,2 @@
-int32[4] color_rgba
+builtin_interfaces/Time stamp
+int32[4] colorrgba

@@ -1,3 +1,4 @@
 uint8 MAX_EFF_CNT = 36
-int32 num_mtb
-float64[36] max_mtb_dipoles
+builtin_interfaces/Time stamp
+int32 nummtb
+float64[36] maxmtbdipoles

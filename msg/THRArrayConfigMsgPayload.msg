@@ -1,1 +1,2 @@
-int32 num_thrusters
+builtin_interfaces/Time stamp
+int32 numthrusters

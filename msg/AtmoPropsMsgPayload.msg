@@ -1,2 +1,3 @@
-float64 neutral_density
-float64 local_temp
+builtin_interfaces/Time stamp
+float64 neutraldensity
+float64 localtemp

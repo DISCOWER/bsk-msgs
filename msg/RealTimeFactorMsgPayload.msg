@@ -1,1 +1,2 @@
-float64 speed_factor
+builtin_interfaces/Time stamp
+float64 speedfactor

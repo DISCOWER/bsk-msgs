@@ -1,1 +1,2 @@
-float64[3] r_hat_xb_b
+builtin_interfaces/Time stamp
+float64[3] rhat_xb_b

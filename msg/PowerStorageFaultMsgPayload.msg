@@ -1,1 +1,2 @@
-float64 fault_capacity_ratio
+builtin_interfaces/Time stamp
+float64 faultcapacityratio

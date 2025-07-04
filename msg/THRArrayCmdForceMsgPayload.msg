@@ -1,2 +1,3 @@
 uint8 MAX_EFF_CNT = 36
-float64[36] thr_force
+builtin_interfaces/Time stamp
+float64[36] thrforce

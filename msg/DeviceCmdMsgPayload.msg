@@ -1,1 +1,2 @@
-uint64 device_cmd
+builtin_interfaces/Time stamp
+uint64 devicecmd

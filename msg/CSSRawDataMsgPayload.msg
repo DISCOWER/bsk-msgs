@@ -1,1 +1,2 @@
-float64 output_data
+builtin_interfaces/Time stamp
+float64 outputdata

@@ -1,1 +1,2 @@
-float64 data_value
+builtin_interfaces/Time stamp
+float64 datavalue

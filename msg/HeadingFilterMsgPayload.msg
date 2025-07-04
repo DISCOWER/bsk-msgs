@@ -1,5 +1,6 @@
 uint8 HEAD_N_STATES_SWITCH = 5
-float64 time_tag
+builtin_interfaces/Time stamp
+float64 timetag
 float64[5] state
-float64[5] state_error
-float64[3] post_fit_res
+float64[5] stateerror
+float64[3] postfitres

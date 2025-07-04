@@ -1,2 +1,3 @@
+builtin_interfaces/Time stamp
 float64 theta
-float64 theta_dot
+float64 thetadot

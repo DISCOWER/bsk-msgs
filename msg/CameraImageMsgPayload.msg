@@ -1,5 +1,6 @@
-uint64 time_tag
+builtin_interfaces/Time stamp
+uint64 timetag
 int32 valid
-int64 camera_id
-int32 image_buffer_length
-int8 image_type
+int64 cameraid
+int32 imagebufferlength
+int8 imagetype

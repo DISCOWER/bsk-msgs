@@ -1,4 +1,5 @@
-float64 time_tag
+builtin_interfaces/Time stamp
+float64 timetag
 float64[3] sigma_bn
 float64[3] omega_bn_b
-float64[3] veh_sun_pnt_bdy
+float64[3] vehsunpntbdy

@@ -1,6 +1,7 @@
 uint8 MAX_BODY_NAME_LENGTH = 64
-float64 j2000_current
-float64[3] position_vector
-float64[3] velocity_vector
-int32 compute_orient
-int8[64] planet_name
+builtin_interfaces/Time stamp
+float64 j2000current
+float64[3] positionvector
+float64[3] velocityvector
+int32 computeorient
+int8[64] planetname

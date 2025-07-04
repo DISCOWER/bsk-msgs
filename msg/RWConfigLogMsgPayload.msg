@@ -1,7 +1,8 @@
-float64[3] r_wb_b
-float64[3] gs_hat_b
-float64[3] w2_hat0_b
-float64[3] w3_hat0_b
+builtin_interfaces/Time stamp
+float64[3] rwb_b
+float64[3] gshat_b
+float64[3] w2hat0_b
+float64[3] w3hat0_b
 float64 mass
 float64 theta
 float64 omega
@@ -13,10 +14,10 @@ float64 u_d
 float64 d
 float64 j13
 float64 u_current
-float64 friction_torque
+float64 frictiontorque
 float64 u_max
 float64 u_min
 float64 u_f
 float64 omega_max
 float64 p_max
-float64 linear_friction_ratio
+float64 linearfrictionratio

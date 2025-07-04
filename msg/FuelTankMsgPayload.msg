@@ -1,3 +1,4 @@
-float64 fuel_mass
-float64 fuel_mass_dot
-float64 max_fuel_mass
+builtin_interfaces/Time stamp
+float64 fuelmass
+float64 fuelmassdot
+float64 maxfuelmass

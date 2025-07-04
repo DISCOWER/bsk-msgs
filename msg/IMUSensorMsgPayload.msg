@@ -1,4 +1,5 @@
-float64[3] dv_frame_platform
-float64[3] accel_platform
-float64[3] dr_frame_platform
-float64[3] ang_vel_platform
+builtin_interfaces/Time stamp
+float64[3] dvframeplatform
+float64[3] accelplatform
+float64[3] drframeplatform
+float64[3] angvelplatform

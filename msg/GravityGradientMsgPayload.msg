@@ -1,1 +1,2 @@
-float64[3] gravity_gradient_torque_b
+builtin_interfaces/Time stamp
+float64[3] gravitygradienttorque_b
