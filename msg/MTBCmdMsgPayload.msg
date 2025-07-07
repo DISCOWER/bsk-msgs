@@ -1,3 +1,6 @@
+# Message for magnetic torque bar dipole commands.
+
 uint8 MAX_EFF_CNT = 36
+
 builtin_interfaces/Time stamp
-float64[36] mtbdipolecmds
+float64[36] mtbdipolecmds  # [A-m2] magnetic torque bar dipole cmds

@@ -1,2 +1,2 @@
 builtin_interfaces/Time stamp
-float64 outputdata
+float64 outputdata  # CSS measurement output

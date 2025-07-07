@@ -2,6 +2,25 @@ def camel_to_snake(name):
     # Convert to lowercase only, not snake_case
     return name.lower()
 
+def extract_header_comment(content):
+    """Extract the main comment block from the header of the file."""
+    # Match the first /* ... */ comment block
+    match = re.search(r'/\*.*?\*/', content, re.DOTALL)
+    if match:
+        comment = match.group(0)
+        # Convert to ROS2 .msg comment format (lines starting with #)
+        lines = comment.split('\n')
+        msg_comment_lines = []
+        for line in lines:
+            # Remove /* and */ and leading/trailing whitespace and asterisks
+            clean_line = re.sub(r'^\s*/?\*+/?', '', line)
+            clean_line = re.sub(r'\*+/?\s*$', '', clean_line)
+            clean_line = clean_line.strip()
+            if clean_line:
+                msg_comment_lines.append(f"# {clean_line}")
+        return '\n'.join(msg_comment_lines)
+    return ""
+
 
 import os
 import re
@@ -41,14 +60,11 @@ def parse_macro_definitions(*macro_paths):
     return macros
 
 def parse_struct_fields(struct_body):
-    # Remove all // and //!< comments
-    struct_body = re.sub(r'//.*', '', struct_body)
-    struct_body = re.sub(r'/\*!<.*?\*/', '', struct_body, flags=re.DOTALL)
-    struct_body = re.sub(r'//!<.*', '', struct_body)
+    # Don't remove all comments, preserve inline field comments
     fields = []
     macros_used = set()
     # Match lines like: type name; or type name[array];
-    field_regex = re.compile(r'^(\w+)\s+(\w+)(\[(\w+)\])?\s*;')
+    field_regex = re.compile(r'^(\w+)\s+(\w+)(\[(\w+)\])?\s*;\s*(//.*)?')
     for line in struct_body.splitlines():
         line = line.strip()
         if not line:
@@ -56,21 +72,32 @@ def parse_struct_fields(struct_body):
         m = field_regex.match(line)
         if not m:
             continue
-        c_type, name, _, arrlen = m.groups()
+        c_type, name, _, arrlen, comment = m.groups()
         # Skip enums and unknown types
         if c_type == 'enum' or c_type not in C_TO_ROS_TYPE:
             continue
         ros_type = C_TO_ROS_TYPE.get(c_type, c_type)
+        
+        # Clean up the comment if present
+        field_comment = ""
+        if comment:
+            # Remove //!< or // and clean up
+            field_comment = re.sub(r'^//!?<?', '', comment).strip()
+        
         if arrlen:
-            fields.append((ros_type, name, arrlen))
+            fields.append((ros_type, name, arrlen, field_comment))
             macros_used.add(arrlen)
         else:
-            fields.append((ros_type, name, None))
+            fields.append((ros_type, name, None, field_comment))
     return fields, macros_used
 
 def convert_header_to_msg(header_path, out_dir, global_macros):
     with open(header_path, 'r') as f:
         content = f.read()
+    
+    # Extract header comment
+    header_comment = extract_header_comment(content)
+    
     # Parse local macros from this header
     local_macros = parse_macro_definitions(header_path)
     # Merge: local macros override global macros
@@ -85,6 +112,16 @@ def convert_header_to_msg(header_path, out_dir, global_macros):
     if not fields:
         return False
     msg_path = os.path.join(out_dir, struct_name + '.msg')
+    
+    # Extract struct comment if present
+    struct_comment_match = re.search(r'/\*!\s*@brief\s*(.*?)\*/', content.replace('\n', ' '), re.DOTALL)
+    struct_comment = ""
+    if struct_comment_match:
+        comment_text = struct_comment_match.group(1).strip()
+        # Clean up any remaining */ at the end
+        comment_text = re.sub(r'\*+/?\s*$', '', comment_text)
+        struct_comment = f"# {comment_text}"
+    
     macro_lines = []
     for macro in sorted(macros_used):
         if macro in macros:
@@ -100,16 +137,18 @@ def convert_header_to_msg(header_path, out_dir, global_macros):
     used_names = set()
     # Add timestamp as the first field
     timestamp_field = "builtin_interfaces/Time stamp"
-    if any(camel_to_snake(name) == "stamp" for _, name, _ in fields):
+    if any(camel_to_snake(name) == "stamp" for _, name, _, _ in fields):
         print(f"WARNING: Field 'stamp' already exists in {struct_name}, skipping addition of timestamp field.")
     else:
         field_lines.append(timestamp_field)
         used_names.add("stamp")
-    for ros_type, name, arrlen in fields:
+    for ros_type, name, arrlen, comment in fields:
         name_snake = camel_to_snake(name)
         if name_snake in used_names:
             continue  # skip duplicate field names
         used_names.add(name_snake)
+        
+        field_line = ""
         if arrlen:
             arrlen_literal = macros.get(arrlen, arrlen)
             try:
@@ -117,12 +156,23 @@ def convert_header_to_msg(header_path, out_dir, global_macros):
                 arrlen_literal = str(arrlen_literal_int)
             except Exception:
                 pass
-            field_lines.append(f"{ros_type}[{arrlen_literal}] {name_snake}")
+            field_line = f"{ros_type}[{arrlen_literal}] {name_snake}"
         else:
-            field_lines.append(f"{ros_type} {name_snake}")
+            field_line = f"{ros_type} {name_snake}"
+        
+        # Add comment if present
+        if comment:
+            field_line += f"  # {comment}"
+        
+        field_lines.append(field_line)
+    
     with open(msg_path, 'w') as f:
+        # Write struct comment if present
+        if struct_comment:
+            f.write(struct_comment + '\n\n')
+        
         if macro_lines:
-            f.write('\n'.join(macro_lines) + '\n')
+            f.write('\n'.join(macro_lines) + '\n\n')
         f.write('\n'.join(field_lines) + '\n')
     print(f"Converted {header_path} -> {msg_path}")
     return True
