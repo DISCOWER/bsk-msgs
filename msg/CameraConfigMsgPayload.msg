@@ -20,3 +20,4 @@ int32 ppmaxblursize  # (Optional) Convolution kernel size of the bokeh filter, w
 int32 updatecameraparameters  # If true, commands camera to update Instrument Camera to current message's parameters
 int32 rendermode  # (Optional) Value of 0 to render visual image (default), value of 1 to render depth buffer to image
 float64[2] depthmapclippingplanes  # (Optional) [m] Set the bounds of rendered depth map by setting the near and far clipping planes when in renderMode=1 (depthMap mode). Default values of 0.1 and 100.
+int32 showhudelementsinimage  # (Optional) Value of 0 (protobuffer default) to use viz default, -1 for false, 1 for true
