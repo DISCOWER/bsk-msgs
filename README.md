@@ -1,6 +1,8 @@
 # Basilisk-ROS2 Messages (bsk-msgs)
 
-ROS 2 message definitions converted from the Basilisk Astrodynamics Framework (BSK) C/C++ message definitions.
+ROS 2 message definitions automatically converted from the Basilisk Astrodynamics Framework (BSK) C/C++ message definitions.
+
+This repository provides the ROS 2 message interface used by the [BSK-ROS2-Bridge](https://github.com/DISCOWER/bsk-ros2-bridge) to enable communication between the [Basilisk astrodynamics framework](https://hanspeterschaub.info/basilisk/) and ROS 2 nodes.
 
 ## Overview
 
