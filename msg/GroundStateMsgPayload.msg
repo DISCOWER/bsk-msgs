@@ -3,3 +3,4 @@
 builtin_interfaces/Time stamp
 float64[3] r_ln_n  # Position vector of the location w.r.t. the inertial origin in the inertial frame
 float64[3] r_lp_n  # Position vector of the location with respect to the planet center in the inertial frame
+float64[3] rhat_lp_n  # [-] Surface normal vector from the target location in inertial coordinates
