@@ -31,7 +31,7 @@ All converted messages should include a `builtin_interfaces/Time stamp` field fo
 The conversion tool regenerates the ROS 2 `.msg` files from Basilisk source code. It handles C/C++ to ROS 2 type mapping, fixed-size array processing via BSK macro resolution, and comment preservation from the original headers.
 
 ```bash
-export BSK_PATH=/path/to/basilisk
+export BSK_PATH=<your-basilisk-path>
 python3 tools/bsk_message_converter.py
 ```
 
